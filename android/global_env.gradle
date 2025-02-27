@@ -1,0 +1,7 @@
+ext {
+    addRepos = this.&addRepos
+}
+
+def addRepos(RepositoryHandler handler) {
+    handler.maven { url = 'https://mirrors.huaweicloud.com/repository/maven/' }
+}

@@ -1,0 +1,1 @@
+-keep class com.sina.snlogger.utils.SinaLogJNIHelper{*;}

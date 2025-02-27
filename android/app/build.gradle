@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace "com.ellaclub.clogger_demo"
+    compileSdk 35
+    defaultConfig {
+        applicationId "com.ellaclub.clogger_demo"
+        minSdkVersion 19
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        //和splits效果相同
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation project(":clogger")
+}
+

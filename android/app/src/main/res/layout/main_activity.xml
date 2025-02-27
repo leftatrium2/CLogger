@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="点击打印日志" />
+
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="写200次日志" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="多线程写20000次日志" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="写logan日志" />
+
+    <Button
+        android:id="@+id/btn_enable_printable"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="关闭Printable日志" />
+
+    <Button
+        android:id="@+id/btn_enable_savefile"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="关闭Savefile日志" />
+
+    <Button
+        android:id="@+id/btn_enable_logan"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="关闭Logan日志" />
+
+    <Button
+        android:id="@+id/btn_native_log"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="触发打印NDK端日志" />
+
+</LinearLayout>
