@@ -23,7 +23,6 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "console_util.h"
-#include "clogger_print.h"
 
 static int is_debug_logan = 0;
 
@@ -32,7 +31,7 @@ int printf_clogan(char *fmt, ...) {
     if (is_debug_logan) {
         va_list argptr;
         va_start(argptr, fmt);
-        clogger_internal_e(fmt, argptr);
+        cnt = vprintf(fmt, argptr);
         va_end(argptr);
     }
     return (cnt);

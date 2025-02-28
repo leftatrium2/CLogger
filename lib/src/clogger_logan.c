@@ -233,7 +233,7 @@ void clogger_logan_write(int level, const clogger_ref *ref)
 
 static void _clogger_clogan_init()
 {
-    if (get_is_init_ok())
+    if (_is_inited)
     {
         return;
     }

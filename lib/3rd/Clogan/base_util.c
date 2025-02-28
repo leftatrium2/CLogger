@@ -22,7 +22,6 @@
 
 #include <sys/time.h>
 #include <memory.h>
-#include <string.h>
 #include "console_util.h"
 
 #define LOGAN_BYTEORDER_NONE  0

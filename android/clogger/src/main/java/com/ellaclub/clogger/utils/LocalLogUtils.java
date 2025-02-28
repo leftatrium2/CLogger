@@ -46,7 +46,7 @@ public class LocalLogUtils {
                         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
                             if (context != null) {
                                 // TODO: 2018/7/17 这个需要合并到FileUtil中，做统一目录处理，也存在比如SD卡禁用后无法存储等问题
-                                loganDirectory = context.getExternalFilesDir("snlogan");
+                                loganDirectory = context.getExternalFilesDir("clogger");
                                 Log.d(LOG_SEGMENT_DEFAULT, "sLoganDirectory:" + loganDirectory);
                             }
                         } else {
