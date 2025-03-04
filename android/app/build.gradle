@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
-    namespace "com.ellaclub.clogger_demo"
-    compileSdk 35
+    compileSdk 32
     defaultConfig {
         applicationId "com.ellaclub.clogger_demo"
         minSdkVersion 19
-        targetSdk 34
+        targetSdk 32
         versionCode 1
         versionName "1.0"
         //和splits效果相同
@@ -22,16 +22,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation "androidx.appcompat:appcompat:1.2.0"
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31")
     implementation project(":clogger")
 }
 
