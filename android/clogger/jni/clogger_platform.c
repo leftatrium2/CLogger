@@ -27,7 +27,7 @@ int is_main_thread(void)
     jobject b_getThread_obj = (*env)->CallObjectMethod(env, b_getMainLooper_obj, b_getThread_id);
     jmethodID b_getId_id = (*env)->GetMethodID(env, b_thread_cls, "getId", "()J");
     jlong b_getid_obj = (*env)->CallLongMethod(env, b_getThread_obj, b_getId_id);
-    // 销毁
+    // release
     (*env)->DeleteLocalRef(env, a_thread_cls);
     (*env)->DeleteLocalRef(env, a_currentThread_obj);
     (*env)->DeleteLocalRef(env, b_looper_cls);
@@ -87,7 +87,7 @@ int is_can_write_sdcard(const char *path)
     jlong available_block_size = (jlong)(*env)->CallIntMethod(env, stat_obj, g_get_available_block_id);
     long long total_size = available_block_size * block_size;
     clogger_internal_e("is_sdcard_can_write,total_size:%lld,MIN_SDCARD:%d", total_size, MIN_SDCARD);
-    // 销毁
+    // release
     (*env)->DeleteLocalRef(env, stat_obj);
     (*env)->DeleteLocalRef(env, str_path);
     return (total_size > MIN_SDCARD);

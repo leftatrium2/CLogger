@@ -3,7 +3,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE    := clogger
 LOCAL_SRC_FILES := \
-	snlogger_jni.c \
+	clogger_jni.c \
 	clogger_android_string.c \
 	clogger_print.c \
 	clogger_platform.c \

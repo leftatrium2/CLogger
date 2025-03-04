@@ -1,0 +1,7 @@
+project './CLoggerDemo.xcodeproj'
+
+platform :ios, '8.0'
+
+target 'CLoggerDemo' do
+  use_frameworks!
+end
