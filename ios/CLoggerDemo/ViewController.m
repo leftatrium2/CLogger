@@ -1,6 +1,7 @@
 #import "ViewController.h"
 #import "OCLogger.h"
 #import "DemoT.h"
+#import "NativeCLogger.h"
 
 @interface ViewController ()
 
@@ -11,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn5;
 @property (weak, nonatomic) IBOutlet UIButton *btn6;
 @property (weak, nonatomic) IBOutlet UIButton *btn7;
+@property (weak, nonatomic) IBOutlet UIButton *btn8;
 
 @end
 
@@ -26,6 +28,7 @@
     [self.btn5 addTarget:self action:@selector(btn5Click) forControlEvents:UIControlEventTouchUpInside];
     [self.btn6 addTarget:self action:@selector(btn6Click) forControlEvents:UIControlEventTouchUpInside];
     [self.btn7 addTarget:self action:@selector(btn7Click) forControlEvents:UIControlEventTouchUpInside];
+    [self.btn8 addTarget:self action:@selector(btn8Click) forControlEvents:UIControlEventTouchUpInside];
 }
 
 // 点击打印日志
@@ -76,6 +79,11 @@
 - (void) btn7Click
 {
     NSLog(@"btn7Click");
+}
+
+- (void) btn8Click
+{
+    testPrint();
 }
 
 @end

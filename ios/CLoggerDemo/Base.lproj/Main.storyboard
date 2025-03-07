@@ -61,6 +61,12 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="多线程写20000次日志"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X52-3C-mNY">
+                                <rect key="frame" x="110" y="519" width="195" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="触发打印Native端日志"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -80,6 +86,7 @@
                         <outlet property="btn5" destination="eDr-yK-KDp" id="8Ug-ch-5FD"/>
                         <outlet property="btn6" destination="wqx-3E-bRr" id="hj6-ja-9lp"/>
                         <outlet property="btn7" destination="dVf-8r-K4P" id="Udf-3h-Whe"/>
+                        <outlet property="btn8" destination="X52-3C-mNY" id="y44-J0-Z56"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
