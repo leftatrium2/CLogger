@@ -78,7 +78,7 @@ static void jni_savefile_log_v(JNIEnv *env, jobject thiz, jstring type, jstring 
     const char *tag_str = (*env)->GetStringUTFChars(env, tag, 0);
     const char *log_str = (*env)->GetStringUTFChars(env, msg, 0);
     clogger_internal_e("savefile log verbose: [%s] %s\n", tag_str, log_str);
-    clogger_ref *ref = create_logan_ref(CLOGGER_TYPE_DEBUG, CLOGGER_LEVEL_VERBOSE, tag_str, log_str);
+    clogger_ref *ref = create_logan_ref(CLOGGER_TYPE, CLOGGER_LEVEL_VERBOSE, tag_str, log_str);
     clogger_savefile_logv(ref);
     (*env)->ReleaseStringUTFChars(env, tag, tag_str);
     (*env)->ReleaseStringUTFChars(env, msg, log_str);
@@ -89,7 +89,7 @@ static void jni_savefile_log_d(JNIEnv *env, jobject thiz, jstring type, jstring 
     const char *tag_str = (*env)->GetStringUTFChars(env, tag, 0);
     const char *log_str = (*env)->GetStringUTFChars(env, msg, 0);
     clogger_internal_e("savefile log debug: [%s] %s\n", tag_str, log_str);
-    clogger_ref *ref = create_logan_ref(CLOGGER_TYPE_DEBUG, CLOGGER_LEVEL_DEBUG, tag_str, log_str);
+    clogger_ref *ref = create_logan_ref(CLOGGER_TYPE, CLOGGER_LEVEL_DEBUG, tag_str, log_str);
     clogger_savefile_logd(ref);
     (*env)->ReleaseStringUTFChars(env, tag, tag_str);
     (*env)->ReleaseStringUTFChars(env, msg, log_str);
@@ -100,7 +100,7 @@ static void jni_savefile_log_i(JNIEnv *env, jobject thiz, jstring type, jstring 
     const char *tag_str = (*env)->GetStringUTFChars(env, tag, 0);
     const char *log_str = (*env)->GetStringUTFChars(env, msg, 0);
     clogger_internal_e("savefile log info: [%s] %s\n", tag_str, log_str);
-    clogger_ref *ref = create_logan_ref(CLOGGER_TYPE_DEBUG, CLOGGER_LEVEL_INFO, tag_str, log_str);
+    clogger_ref *ref = create_logan_ref(CLOGGER_TYPE, CLOGGER_LEVEL_INFO, tag_str, log_str);
     clogger_savefile_logi(ref);
     (*env)->ReleaseStringUTFChars(env, tag, tag_str);
     (*env)->ReleaseStringUTFChars(env, msg, log_str);
@@ -111,7 +111,7 @@ static void jni_savefile_log_w(JNIEnv *env, jobject thiz, jstring type, jstring 
     const char *tag_str = (*env)->GetStringUTFChars(env, tag, 0);
     const char *log_str = (*env)->GetStringUTFChars(env, msg, 0);
     clogger_internal_e("savefile log warning: [%s] %s\n", tag_str, log_str);
-    clogger_ref *ref = create_logan_ref(CLOGGER_TYPE_DEBUG, CLOGGER_LEVEL_WARNING, tag_str, log_str);
+    clogger_ref *ref = create_logan_ref(CLOGGER_TYPE, CLOGGER_LEVEL_WARNING, tag_str, log_str);
     clogger_savefile_logw(ref);
     (*env)->ReleaseStringUTFChars(env, tag, tag_str);
     (*env)->ReleaseStringUTFChars(env, msg, log_str);
@@ -122,7 +122,7 @@ static void jni_savefile_log_e(JNIEnv *env, jobject thiz, jstring type, jstring 
     const char *tag_str = (*env)->GetStringUTFChars(env, tag, 0);
     const char *log_str = (*env)->GetStringUTFChars(env, msg, 0);
     clogger_internal_e("savefile log error: [%s] %s\n", tag_str, log_str);
-    clogger_ref *ref = create_logan_ref(CLOGGER_TYPE_DEBUG, CLOGGER_LEVEL_ERROR, tag_str, log_str);
+    clogger_ref *ref = create_logan_ref(CLOGGER_TYPE, CLOGGER_LEVEL_ERROR, tag_str, log_str);
     clogger_savefile_loge(ref);
     (*env)->ReleaseStringUTFChars(env, tag, tag_str);
     (*env)->ReleaseStringUTFChars(env, msg, log_str);

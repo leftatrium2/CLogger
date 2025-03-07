@@ -6,5 +6,5 @@
 void testPrint(void)
 {
     const char* str = "hello debug log!";
-    clogger_log(CLOGGER_TYPE_DEBUG, CLOGGER_LEVEL_DEBUG, TAG, str);
+    clogger_log(CLOGGER_TYPE_API, CLOGGER_LEVEL_DEBUG, TAG, str);
 }

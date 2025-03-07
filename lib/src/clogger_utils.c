@@ -138,29 +138,9 @@ char get_level(int level)
 int get_type_flag(const char *type)
 {
     unsigned long type_len = strlen(type);
-    if (!strncmp(type, CLOGGER_TYPE_APACHE, type_len))
-    {
-        return CLOGGER_FLAG_APACHE;
-    }
-    else if (!strncmp(type, CLOGGER_TYPE_API, type_len))
+    if (!strncmp(type, CLOGGER_TYPE, type_len))
     {
         return CLOGGER_FLAG_API;
-    }
-    else if (!strncmp(type, CLOGGER_TYPE_APM, type_len))
-    {
-        return CLOGGER_FLAG_APM;
-    }
-    else if (!strncmp(type, CLOGGER_TYPE_BIZ_SIMA, type_len))
-    {
-        return CLOGGER_FLAG_BIZ_SIMA;
-    }
-    else if (!strncmp(type, CLOGGER_TYPE_DEBUG, type_len))
-    {
-        return CLOGGER_FLAG_DEBUG;
-    }
-    else if (!strncmp(type, CLOGGER_TYPE_LIFECYCLE, type_len))
-    {
-        return CLOGGER_FLAG_LIFECYCLE;
     }
     return CLOGGER_FLAG_UNKNOWN;
 }

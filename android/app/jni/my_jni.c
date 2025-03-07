@@ -41,32 +41,32 @@ extern "C"
 
     static void clogger_debug(const char *tag, const char *msg)
     {
-        call_log(CLOGGER_TYPE_DEBUG, CLOGGER_LEVEL_DEBUG, tag, msg);
+        call_log(CLOGGER_TYPE, CLOGGER_LEVEL_DEBUG, tag, msg);
     }
 
     static void clogger_info(const char *tag, const char *msg)
     {
-        call_log(CLOGGER_TYPE_DEBUG, CLOGGER_LEVEL_INFO, tag, msg);
+        call_log(CLOGGER_TYPE, CLOGGER_LEVEL_INFO, tag, msg);
     }
 
     static void clogger_verbose(const char *tag, const char *msg)
     {
-        call_log(CLOGGER_TYPE_DEBUG, CLOGGER_LEVEL_VERBOSE, tag, msg);
+        call_log(CLOGGER_TYPE, CLOGGER_LEVEL_VERBOSE, tag, msg);
     }
 
     static void clogger_warning(const char *tag, const char *msg)
     {
-        call_log(CLOGGER_TYPE_DEBUG, CLOGGER_LEVEL_WARNING, tag, msg);
+        call_log(CLOGGER_TYPE, CLOGGER_LEVEL_WARNING, tag, msg);
     }
 
     static void clogger_error(const char *tag, const char *msg)
     {
-        call_log(CLOGGER_TYPE_DEBUG, CLOGGER_LEVEL_ERROR, tag, msg);
+        call_log(CLOGGER_TYPE, CLOGGER_LEVEL_ERROR, tag, msg);
     }
 
     static void clogger_wtf(const char *tag, const char *msg)
     {
-        call_log(CLOGGER_TYPE_DEBUG, CLOGGER_LEVEL_WTF, tag, msg);
+        call_log(CLOGGER_TYPE, CLOGGER_LEVEL_WTF, tag, msg);
     }
 
     JNIEXPORT void JNICALL Java_com_ellaclub_clogger_MyJNI_testPrint(JNIEnv *env, jobject thiz)
