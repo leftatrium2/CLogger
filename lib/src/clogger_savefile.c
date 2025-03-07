@@ -21,11 +21,11 @@ static int _enable;
 
 static void *_thread_savefile_running(void *args)
 {
-    int ret = 0;
+    long ret = 0;
     clogger_ref *ref;
     int is_main = 0;
     int level = -1;
-    int msg = -1;
+    unsigned int msg = -1;
     while (1)
     {
         ret = clogger_q_wait(&q_log_queue, clogger_q_savefile, &msg, &is_main, &ref, &level);
@@ -73,7 +73,7 @@ static void *_thread_savefile_running(void *args)
             get_datetime(30, datetime);
             snprintf(content, _MAX_FILE_LINE_LEN - 1, "%s %c/%s %s", datetime, get_level(level), ref->tag, ref->log);
             clogger_internal_e("the savefile log content is %s", content);
-            int ret = fwrite(content, strlen(content), 1, _log_file_p);
+            unsigned long ret = fwrite(content, strlen(content), 1, _log_file_p);
             if (ret <= 0)
             {
                 clogger_internal_e("cant save savefile log!");
@@ -127,7 +127,7 @@ void clogger_savefile_init(const char *path)
     _enable = 1;
 }
 
-void clogger_savefile_destroy()
+void clogger_savefile_destroy(void)
 {
     clogger_internal_e("clogger_savefile_destroy");
     if (_is_inited)

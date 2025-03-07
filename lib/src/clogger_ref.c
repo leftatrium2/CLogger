@@ -21,7 +21,7 @@ clogger_ref *clogger_ref_create(const char *type, int level, const char *tag, co
     if (ref->mutex == NULL)
     {
         return NULL;
-    }
+}
     return ref;
 }
 void clogger_ref_inc(clogger_ref *ref)

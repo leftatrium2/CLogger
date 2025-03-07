@@ -6,6 +6,10 @@
 #include "clogger_message_queue.h"
 #include "clogger_print.h"
 
+clogger_callback callback_list[LOG_CALLBACK_NUM];
+int callback_list_num;
+clogger_queue q_log_queue;
+
 void free_log_ref(clogger_ref *ref)
 {
     clogger_internal_e("free now, tag: %s, log: %s", ref->tag, ref->log);

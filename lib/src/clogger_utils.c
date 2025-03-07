@@ -9,11 +9,7 @@
 #include "clogger_print.h"
 
 /**
- * @brief 获取格式化时间，格式：[yyyy-mm-dd]
- *
- * @param length
- * @param time_str
- * @return int
+ * 获取格式化时间，格式：[yyyy-mm-dd]
  */
 int get_date(int length, char *time_str)
 {
@@ -26,11 +22,7 @@ int get_date(int length, char *time_str)
 }
 
 /**
- * @brief 获取格式化时间，格式为：[yyyy-mm-dd hh:mm:ss]
- *
- * @param length
- * @param time_str
- * @return int
+ * 获取格式化时间，格式为：[yyyy-mm-dd hh:mm:ss]
  */
 int get_datetime(int length, char *time_str)
 {
@@ -49,11 +41,7 @@ int get_datetime(int length, char *time_str)
 }
 
 /**
- * @brief 获取FakeTime，【1970-01-01 00:00:00】
- *
- * @param length
- * @param time_str
- * @return int
+ * 获取FakeTime，【1970-01-01 00:00:00】
  */
 int get_faketime(int length, char *time_str)
 {
@@ -62,10 +50,7 @@ int get_faketime(int length, char *time_str)
 }
 
 /**
- * @brief 给定时间戳，获取时间间隔
- *
- * @param ts
- * @return int 间隔的秒数
+ * 给定时间戳，获取时间间隔
  */
 int get_date_i(unsigned long *ts)
 {
@@ -79,35 +64,29 @@ int get_date_i(unsigned long *ts)
 }
 
 /**
- * @brief 当前时间戳，单位：毫秒
- *
- * @return long 毫秒
+ * 当前时间戳，单位：毫秒
  */
-long long get_ts()
+long long get_ts(void)
 {
     struct timeval tv;
-    int ret = gettimeofday(&tv, NULL);
+    gettimeofday(&tv, NULL);
     long long time = ((long long)tv.tv_sec) * 1000 + ((long long)tv.tv_usec) / 1000;
     clogger_internal_e("get_ts:%lld, tv_sec:%ld, tv_usec:%ld", time, tv.tv_sec, tv.tv_usec);
     return time;
 }
 
 /**
- * @brief 计算当天的0点毫秒数
- *
- * @return long long 毫秒
+ * 计算当天的0点毫秒数
  */
-long long get_current_time_ms()
+long long get_current_time_ms(void)
 {
     return get_current_time_s() * 1000;
 }
 
 /**
- * @brief 计算当天的0点秒
- *
- * @return long long 秒
+ * 计算当天的0点秒
  */
-long long get_current_time_s()
+long long get_current_time_s(void)
 {
     time_t timep;
     struct tm *p;
@@ -121,10 +100,7 @@ long long get_current_time_s()
 }
 
 /**
- * @brief 通过给定level，得到字符形式的level
- *
- * @param level 数值
- * @return char 字符
+ * 通过给定level，得到字符形式的level
  */
 char get_level(int level)
 {
@@ -157,14 +133,11 @@ char get_level(int level)
 }
 
 /**
- * @brief 从字符串类型的type，导出logan使用的flag
- *
- * @param type
- * @return int
+ * 从字符串类型的type，导出logan使用的flag
  */
 int get_type_flag(const char *type)
 {
-    int type_len = strlen(type);
+    unsigned long type_len = strlen(type);
     if (!strncmp(type, CLOGGER_TYPE_APACHE, type_len))
     {
         return CLOGGER_FLAG_APACHE;

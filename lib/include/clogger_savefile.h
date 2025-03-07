@@ -3,8 +3,8 @@
 
 #include "clogger_ref.h"
 
-void clogger_savefile_init();
-void clogger_savefile_destroy();
+void clogger_savefile_init(const char *path);
+void clogger_savefile_destroy(void);
 
 void clogger_savefile_enable(int enable);
 

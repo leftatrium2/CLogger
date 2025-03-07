@@ -18,8 +18,8 @@ typedef struct _clogger_logan_config
 } clogger_logan_config;
 
 void clogger_logan_init(const char *cache_path, const char *dir_path, int max_file, int max_day, int debug, int use_faketime);
-void clogger_logan_destroy();
-void clogger_logan_flush();
+void clogger_logan_destroy(void);
+void clogger_logan_flush(void);
 
 void clogger_logan_enable(int enable);
 

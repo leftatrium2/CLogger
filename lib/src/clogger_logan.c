@@ -88,7 +88,7 @@ DELETE_EXPIRED_ERROR:
  *
  * @return int
  */
-static int is_day()
+static int is_day(void)
 {
     long long current_time = get_ts();
     clogger_internal_e("_current_day:%lld,current_time:%lld", _current_day, current_time);
@@ -154,7 +154,7 @@ static void _do_write_logan_file(const char *type, const char *content, long lon
 
 static void *_thread_logan_running(void *args)
 {
-    int ret = 0;
+    long ret = 0;
     clogger_ref *ref;
     int is_main = 0;
     int level = -1;
@@ -231,7 +231,7 @@ void clogger_logan_write(int level, const clogger_ref *ref)
     }
 }
 
-static void _clogger_clogan_init()
+static void _clogger_clogan_init(void)
 {
     if (_is_inited)
     {
@@ -278,13 +278,13 @@ void clogger_logan_init(const char *cache_path, const char *dir_path, int max_fi
     _enable = 1;
 }
 
-void clogger_logan_destroy()
+void clogger_logan_destroy(void)
 {
     clogger_internal_e("clogger_logan_destroy");
     clogger_q_post(&q_log_queue, clogger_q_logan, CLOGGER_Q_EVENT_CLOSE, is_main_thread(), NULL, 0);
 }
 
-void clogger_logan_flush()
+void clogger_logan_flush(void)
 {
     clogger_internal_e("flush logan now!");
     if (_is_clogan_open)
