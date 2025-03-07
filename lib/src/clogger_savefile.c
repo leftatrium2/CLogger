@@ -11,7 +11,7 @@
 #include "clogger_utils.h"
 #include "clogger_platform.h"
 
-#define _MAX_FILE_PATH_LEN 100
+#define _MAX_FILE_PATH_LEN 1024
 #define _MAX_FILE_LINE_LEN (CLOGGER_SIZE + 100)
 
 static pthread_t _p_savefile_id;

@@ -1,5 +1,6 @@
 #import "ViewController.h"
 #import "OCLogger.h"
+#import "DemoT.h"
 
 @interface ViewController ()
 
@@ -30,8 +31,15 @@
 // 点击打印日志
 - (void) btn1Click
 {
-    NSLog(@"btn1Click");
+    DemoT *demoT = [[DemoT alloc] init];
     [[CLogger shareInstance] debug:@"btn1Click 打印日志1"];
+    [[CLogger shareInstance] debug:demoT message:@"btn1Click 打印日志2"];
+    [[CLogger shareInstance] verbose:@"btn1Click 打印verbose日志"];
+    [[CLogger shareInstance] info:@"btn1Click 打印info日志"];
+    [[CLogger shareInstance] warn:@"btn1Click 打印warning日志"];
+    [[CLogger shareInstance] error:@"btn1Click 打印error日志"];
+    [[CLogger shareInstance] crash:@"btn1Click 打印Crash日志"];
+    [[CLogger shareInstance] wtf:@"btn1Click 打印wtf日志"];
 }
 
 // 写200次日志
