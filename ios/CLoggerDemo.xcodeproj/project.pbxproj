@@ -304,6 +304,7 @@
 		FC978DE62D78434D00AC81B4 /* SaveFileLogImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveFileLogImpl.h; sourceTree = "<group>"; };
 		FC978DE72D78434D00AC81B4 /* SaveFileLogImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaveFileLogImpl.m; sourceTree = "<group>"; };
 		FCAC857B2D76F5A90046267D /* CLoggerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLoggerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCBB5CEB2D815F9E001548DD /* OCLoggerIOSWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCLoggerIOSWrapper.h; sourceTree = "<group>"; };
 		FCC5BE192D76F894005CDB7B /* OCLoggerConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCLoggerConfig.h; sourceTree = "<group>"; };
 		FCC5BE1A2D76F894005CDB7B /* OCLoggerConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCLoggerConfig.m; sourceTree = "<group>"; };
 		FCF1DD3A2D7AE8B800ECBE95 /* CLoggerIOSUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLoggerIOSUtils.h; sourceTree = "<group>"; };
@@ -642,6 +643,7 @@
 		FCC5BD552D76F742005CDB7B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FCBB5CEB2D815F9E001548DD /* OCLoggerIOSWrapper.h */,
 				FC978DC32D7825DF00AC81B4 /* OCLoggerIOSWrapper.m */,
 				FCC5BE192D76F894005CDB7B /* OCLoggerConfig.h */,
 				FCC5BE1A2D76F894005CDB7B /* OCLoggerConfig.m */,

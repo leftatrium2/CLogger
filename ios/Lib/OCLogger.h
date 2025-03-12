@@ -40,6 +40,11 @@ typedef enum _CLoggerLevel
 @end
 
 @interface CLogger : NSObject
+
+@property (nonatomic,assign) BOOL isLogan;
+@property (nonatomic,assign) BOOL isSaveFile;
+@property (nonatomic,assign) BOOL isPrintable;
+
 + (instancetype) shareInstance;
 - (void) initWithConfig:(CLoggerConfig *) config;
 - (instancetype) init NS_UNAVAILABLE;

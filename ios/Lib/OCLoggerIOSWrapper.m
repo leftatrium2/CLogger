@@ -5,14 +5,131 @@
 #import <Foundation/Foundation.h>
 #import <stdarg.h>
 #import <string.h>
+#import "OCLoggerIOSWrapper.h"
+#import "clogger_savefile.h"
+#import "clogger_logan.h"
 #import "clogger.h"
 #import "clogger_print.h"
 #import "clogger_platform.h"
+#import "CLoggerIOSUtils.h"
 #import "clogger_const.h"
 #import "clogger_print.h"
 #import "clogger_ref.h"
+#import "OCLogger.h"
 
 #define CLOGGER_INTERNAL_TAG "CLOGGER"
+
+
+@interface CLoggerIOSWrapper()
+
+@end
+
+@implementation CLoggerIOSWrapper
+static CLoggerIOSWrapper *_sharedInstance = nil;
+
++ (instancetype) shareInstance
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[self alloc] init];
+    });
+    return _sharedInstance;
+}
+
+- (void) savefileLogV:(id<T>)tag msg:(NSString *) msg
+{
+    NSString *tagStr = [tag tag];
+    if(!tag)
+    {
+        tagStr = @"DEBUG";
+    }
+    clogger_savefile_logv(create_ios_ref(LOGTYPE_DEBUG, Verbose, [tagStr UTF8String], [msg UTF8String]));
+}
+- (void) savefileLogD:(id<T>)tag msg:(NSString *) msg
+{
+    NSString *tagStr = [tag tag];
+    if(!tag)
+    {
+        tagStr = @"DEBUG";
+    }
+    clogger_savefile_logd(create_ios_ref(LOGTYPE_DEBUG, Debug, [tagStr UTF8String], [msg UTF8String]));
+}
+- (void) savefileLogI:(id<T>)tag msg:(NSString *) msg
+{
+    NSString *tagStr = [tag tag];
+    if(!tag)
+    {
+        tagStr = @"DEBUG";
+    }
+    clogger_savefile_logi(create_ios_ref(LOGTYPE_DEBUG, Info, [tagStr UTF8String], [msg UTF8String]));
+}
+- (void) savefileLogW:(id<T>)tag msg:(NSString *) msg
+{
+    NSString *tagStr = [tag tag];
+    if(!tag)
+    {
+        tagStr = @"DEBUG";
+    }
+    clogger_savefile_logw(create_ios_ref(LOGTYPE_DEBUG, Warn, [tagStr UTF8String], [msg UTF8String]));
+}
+- (void) savefileLogE:(id<T>)tag msg:(NSString *) msg
+{
+    NSString *tagStr = [tag tag];
+    if(!tag)
+    {
+        tagStr = @"DEBUG";
+    }
+    clogger_savefile_loge(create_ios_ref(LOGTYPE_DEBUG, Error, [tagStr UTF8String], [msg UTF8String]));
+}
+
+
+- (void) loganLogV:(id<T>)tag msg:(NSString *) msg
+{
+    NSString *tagStr = [tag tag];
+    if(!tag)
+    {
+        tagStr = @"DEBUG";
+    }
+    clogger_logan_logv(create_ios_ref(LOGTYPE_DEBUG, Verbose, [tagStr UTF8String], [msg UTF8String]));
+}
+- (void) loganLogD:(id<T>)tag msg:(NSString *) msg
+{
+    NSString *tagStr = [tag tag];
+    if(!tag)
+    {
+        tagStr = @"DEBUG";
+    }
+    clogger_logan_logd(create_ios_ref(LOGTYPE_DEBUG, Debug, [tagStr UTF8String], [msg UTF8String]));
+}
+- (void) loganLogI:(id<T>)tag msg:(NSString *) msg
+{
+    NSString *tagStr = [tag tag];
+    if(!tag)
+    {
+        tagStr = @"DEBUG";
+    }
+    clogger_logan_logi(create_ios_ref(LOGTYPE_DEBUG, Info, [tagStr UTF8String], [msg UTF8String]));
+}
+- (void) loganLogW:(id<T>)tag msg:(NSString *) msg
+{
+    NSString *tagStr = [tag tag];
+    if(!tag)
+    {
+        tagStr = @"DEBUG";
+    }
+    clogger_logan_logw(create_ios_ref(LOGTYPE_DEBUG, Warn, [tagStr UTF8String], [msg UTF8String]));
+}
+- (void) loganLogE:(id<T>)tag msg:(NSString *) msg
+{
+    NSString *tagStr = [tag tag];
+    if(!tag)
+    {
+        tagStr = @"DEBUG";
+    }
+    clogger_logan_loge(create_ios_ref(LOGTYPE_DEBUG, Error, [tagStr UTF8String], [msg UTF8String]));
+}
+
+@end
 
 int is_main_thread(void)
 {
