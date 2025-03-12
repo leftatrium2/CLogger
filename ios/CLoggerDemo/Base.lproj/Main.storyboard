@@ -46,12 +46,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqx-3E-bRr">
                                 <rect key="frame" x="100" y="474" width="193" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="关闭SAVEFILE日志"/>
+                                <buttonConfiguration key="configuration" style="plain" title="关闭Savefile日志"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVf-8r-K4P">
                                 <rect key="frame" x="100" y="549" width="193" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="关闭LOGAN日志"/>
+                                <buttonConfiguration key="configuration" style="plain" title="关闭Logan日志"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X52-3C-mNY">
                                 <rect key="frame" x="90" y="624" width="213" height="35"/>

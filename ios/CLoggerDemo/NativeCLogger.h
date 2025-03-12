@@ -6,4 +6,4 @@
 
 void testPrint(void);
 
-#endif /* NativeCLogger_h */
+#endif

@@ -121,9 +121,6 @@
 @interface CLogger()
 
 @property (nonatomic,strong) CLoggerConfig *config;
-@property (nonatomic,assign) BOOL isLogan;
-@property (nonatomic,assign) BOOL isSaveFile;
-@property (nonatomic,assign) BOOL isPrintable;
 
 @property (nonatomic,strong) PrintLogImpl *printLogImpl;
 @property (nonatomic,strong) SaveFileLogImpl *saveFileLogImpl;
@@ -188,9 +185,9 @@ static CLogger *_sharedInstance = nil;
 {
     if(config)
     {
-        BOOL isLogan = config.logan;
-        [self.loganLogImpl setEnable:isLogan];
-        if(isLogan)
+        self.isLogan = config.logan;
+        [self.loganLogImpl setEnable:self.isLogan];
+        if(self.isLogan)
         {
             [self addLogImpl:CLOGGER_LOGAN_KEY log:self.loganLogImpl];
             const char *dir_path = [config.loganDir UTF8String];
@@ -208,9 +205,9 @@ static CLogger *_sharedInstance = nil;
 {
     if(config)
     {
-        BOOL isSaveFile = config.saveToDisk;
-        [self.saveFileLogImpl setEnable:isSaveFile];
-        if(isSaveFile)
+        self.isSaveFile = config.saveToDisk;
+        [self.saveFileLogImpl setEnable:self.isSaveFile];
+        if(self.isSaveFile)
         {
             [self addLogImpl:CLOGGER_SAVEFILE_KEY log:self.saveFileLogImpl];
             const char *save_path = [config.saveToDiskLog UTF8String];
@@ -223,9 +220,9 @@ static CLogger *_sharedInstance = nil;
 {
     if(config)
     {
-        BOOL isPrintable = config.printable;
-        [self.printLogImpl setEnable:isPrintable];
-        if(isPrintable)
+        self.isPrintable = config.printable;
+        [self.printLogImpl setEnable:self.isPrintable];
+        if(self.isPrintable)
         {
             [self addLogImpl:CLOGGER_PRINTABLE_KEY log:self.printLogImpl];
             clogger_print_init();
