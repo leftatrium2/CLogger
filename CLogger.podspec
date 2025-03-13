@@ -24,15 +24,15 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.source_files = 'ios/Lib/**/*.{c,m,h}'
   
-  s.subspec 'Clogan' do |clogan|
+  s.subspec 'clogan' do |clogan|
   	clogan.source_files = 'lib/3rd/Clogan/*.{c,h}'
   end
   s.subspec 'mbedtls' do |mbedtls|
-  	mbedtls.source_files = 'lib/3rd/mbedtls/library/*.c'
+  	mbedtls.source_files = 'lib/3rd/mbedtls/library/*.c','lib/3rd/mbedtls/include/mbedtls/*.h'
   	mbedtls.public_header_files = 'lib/3rd/mbedtls/include/mbedtls/*.h'
   end
-  s.subspec 'clogger' do |clogger|
-  	clogger.source_files = 'lib/src/*.c'
-  	clogger.public_header_files = 'lib/include/*.h'
+  s.subspec 'source' do |source|
+  	source.source_files = 'lib/src/*.c','lib/include/*.h'
+  	source.public_header_files = 'lib/include/*.h'
   end
 end
