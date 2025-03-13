@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
 
 
   user_header_paths = [
-		'${PODS_ROOT}/CLogger/3rd/mbedtls/include',
-		'${PODS_ROOT}/CLogger/3rd/Clogan',
-		'${PODS_ROOT}/CLogger/include',
+		'${PODS_ROOT}/CLogger/lib/3rd/mbedtls/include',
+		'${PODS_ROOT}/CLogger/lib/3rd/Clogan',
+		'${PODS_ROOT}/CLogger/lib/include',
   ]
   s.pod_target_xcconfig = { 'USER_HEADER_SEARCH_PATHS' => user_header_paths.join(' ') }
   s.ios.deployment_target = '9.0'
